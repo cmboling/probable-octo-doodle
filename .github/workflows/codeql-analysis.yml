@@ -16,6 +16,13 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      
+    - name: test 1
+      run: |
+        pwd 
+        ls -l
+        cd css
+        ls -l
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
@@ -23,7 +30,16 @@ jobs:
         languages: ${{ matrix.language }}
         config-file: ./.github/codeql/codeql-config.yml
         # queries: +security-and-quality
-        
+
+    - name: test 2
+      run: |
+        pwd 
+        ls -l
+        cd css
+        ls -l
+        cd ..
+        pwd
+
     - name: Autobuild
       uses: github/codeql-action/autobuild@v1
 
