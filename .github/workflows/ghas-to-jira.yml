@@ -19,5 +19,5 @@ jobs:
           jira_url: '${{ secrets.JIRA_URL }}'
           jira_user: '${{ secrets.JIRA_USER }}'
           jira_token: '${{ secrets.JIRA_TOKEN }}'
-          jira_project: '${{ secrets.JIRA_PROJECT }}'
+          jira_project: GHAS
           sync_direction: 'gh2jira'
