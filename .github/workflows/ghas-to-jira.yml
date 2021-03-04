@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync with JIRA
-        uses: johnlugton/lgtm-issue-tracker-example@v2
+        uses: cmboling/lgtm-issue-tracker-example@v2
         with:
           github_token: '${{ secrets.GITHUB_TOKEN }}'
           jira_url: '${{ secrets.JIRA_URL }}'
@@ -21,18 +21,3 @@ jobs:
           jira_token: '${{ secrets.JIRA_TOKEN }}'
           jira_project: '${{ secrets.JIRA_PROJECT }}'
           sync_direction: 'gh2jira'
-  test_job_2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Install dependencies with pipenv
-        run: |
-          chmod +x gh2jira
-          ./gh2jira sync \                 
-            --gh-url https://api.github.com \
-            --gh-token '${{ secrets.GITHUB_TOKEN }}' \
-            --gh-repo probable-octo-doodle \
-            --jira-url   '${{ secrets.JIRA_URL }}' \
-            --jira-user '${{ secrets.JIRA_USER }}' \
-            --jira-token '${{ secrets.JIRA_TOKEN }}' \
-            --jira-project GHAS \
-            --direction gh2jira
