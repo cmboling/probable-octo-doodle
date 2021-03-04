@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync with JIRA
-        uses: johnlugton/lgtm-issue-tracker-example@action
+        uses: johnlugton/lgtm-issue-tracker-example@v2
         with:
           github_token: '${{ secrets.GITHUB_TOKEN }}'
           jira_url: '${{ secrets.JIRA_URL }}'
@@ -26,9 +26,8 @@ jobs:
     steps:
       - name: Install dependencies with pipenv
         run: |
-          pip install pipenv
-          pipenv install --deploy --dev
-          pipenv run ./gh2jira sync \                 
+          chmod +x gh2jira
+          ./gh2jira sync \                 
             --gh-url https://api.github.com \
             --gh-token '${{ secrets.GITHUB_TOKEN }}' \
             --gh-repo probable-octo-doodle \
