@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync with JIRA
-        uses: cmboling/lgtm-issue-tracker-example@v2
+        uses: johnlugton/lgtm-issue-tracker-example@action
         with:
           github_token: '${{ secrets.GITHUB_TOKEN }}'
-          jira_url: ${{ secrets.JIRA_URL }}
+          jira_url: '${{ secrets.JIRA_URL }}'
           jira_user: '${{ secrets.JIRA_USER }}'
           jira_token: '${{ secrets.JIRA_TOKEN }}'
           jira_project: GHAS
